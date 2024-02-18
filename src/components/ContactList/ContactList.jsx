@@ -1,5 +1,5 @@
 const ContactList = () => {
-  return <></>;
+  return <>ContactList</>;
 };
 
 export default ContactList;
