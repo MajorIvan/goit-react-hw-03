@@ -32,21 +32,25 @@ const ContactForm = ({ onAdd }) => {
       }}
     >
       <Form className={css.form}>
-        <label htmlFor={nameId}>Name</label>
-        <Field
-            className={css.field}
-            type="text"
-            name="name"
-            id={nameId}
-            />
-        <ErrorMessage className={css.error} name="name" component="span" />
-        <label htmlFor={numberId}>Number</label>
-        <Field 
-            className={css.field} 
-            type="tel" 
-            name="number" 
-            id={numberId} />
-        <ErrorMessage className={css.error} name="number" component="span" />
+        <div className={css.formGroup}>
+          <label htmlFor={nameId}>Name</label>
+          <Field
+              className={css.field}
+              type="text"
+              name="name"
+              id={nameId}
+              />
+          <ErrorMessage className={css.error} name="name" component="span" />
+        </div>
+        <div className={css.formGroup}>
+          <label htmlFor={numberId}>Number</label>
+          <Field 
+              className={css.field} 
+              type="tel" 
+              name="number" 
+              id={numberId} />
+          <ErrorMessage className={css.error} name="number" component="span" />
+        </div>
         <button type="submit">Add contact</button>
       </Form>
     </Formik>
