@@ -9,3 +9,7 @@
   flex-direction: column;
   gap: 5px;
 }
+.error {
+  font-size: small;
+  color: red;
+}

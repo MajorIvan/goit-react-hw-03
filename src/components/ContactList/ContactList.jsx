@@ -1,9 +1,9 @@
 import Contact from "../Contact/Contact";
 
-const ContactList = ({ value }) => {
+const ContactList = ({ value, onDelete }) => {
   return (
     <div>
-      <Contact items={value} />
+      <Contact items={value} onDelete={onDelete} />
     </div>
   );
 };
