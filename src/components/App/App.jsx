@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import ContactForm from "../ContactForm/ContactForm";
-import SearchBar from "../SearchBar/SearchBar";
+import SearchBox from "../SearchBox/SearchBox";
 import ContactList from "../ContactList/ContactList";
 import css from "./App.module.css";
 
@@ -14,11 +14,11 @@ const App = () => {
   ]);
 
   useEffect(() => {
-    setContacts(JSON.parse(localStorage.getItem('contacts')) || []);
+    setContacts(JSON.parse(localStorage.getItem("contacts")) || []);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(contacts));
+    localStorage.setItem("contacts", JSON.stringify(contacts));
   }, [contacts]);
 
   const visibleContacts = contacts.filter((contact) =>
@@ -27,7 +27,7 @@ const App = () => {
 
   const addContacts = (newContact) => {
     setContacts((prevContacts) => {
-      return [...prevContacts, newContact ];
+      return [...prevContacts, newContact];
     });
   };
 
@@ -41,10 +41,10 @@ const App = () => {
     <div className={css.container}>
       <h1>Phonebook</h1>
       <ContactForm onAdd={addContacts} />
-      <SearchBar value={searchFilter} onChange={setSearchFilter} />
-      <ContactList value={visibleContacts} onDelete={deleteContact} />
+      <SearchBox query={searchFilter} onChange={setSearchFilter} />
+      <ContactList contacts={visibleContacts} onDelete={deleteContact} />
     </div>
   );
-}
+};
 
 export default App;
